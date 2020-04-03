@@ -2,21 +2,37 @@
   <div id="app">
     <img alt="store image" class="store-img" src="./assets/store.png">
     <GroceriesList/>
-
-    <div class="container mt-3">
-      <router-view />
-    </div>
-    
   </div>
 </template>
 
 <script>
-import GroceriesList from './components/GroceriesList.vue'
-
+import GroceryDataService from "./services/GroceryDataService";
+import GroceriesList from "./components/GroceriesList.vue"
+import groceries from "../data.js"
 export default {
   name: 'App',
   components: {
     GroceriesList
+  },
+  methods: {
+    seedGroceryData() {
+      GroceryDataService.deleteAll()
+        .then(response => {
+          console.log(response.data.message)
+        })
+      for (const grocery of groceries) {
+        GroceryDataService.create(grocery)
+          .then(response => {
+            this.groceries = response.data;
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      }
+    }
+  },
+  mounted() {
+    this.seedGroceryData();
   }
 }
 </script>
@@ -31,6 +47,7 @@ export default {
   margin-top: 60px;
 }
 .store-img {
-  width: 500px;
+  width: 30%;
+  margin-bottom: 50px;
 }
 </style>

@@ -1,18 +1,18 @@
 <template>
   <div class="groceries-list-wrapper">
-    Grocery Item:
-    <div class="grocery" v-for="grocery in groceries" v-bind:key="grocery.id">
-      {{ grocery.name }}
-      {{ grocery.description }}
-      {{ grocery.image }}
-    </div>
+    <h4>Grocery Items:</h4>
+    <Grocery :grocery="grocery" class="grocery" v-for="grocery in groceries" v-bind:key="grocery.id"/>
   </div>
 </template>
 
 <script>
 import GroceryDataService from "../services/GroceryDataService";
+import Grocery from "./Grocery";
 export default {
   name: 'GroceriesLists',
+  components: {
+    Grocery,
+  },
   data() {
     return {
       groceries: [],
@@ -23,7 +23,6 @@ export default {
       GroceryDataService.getAll()
         .then(response => {
           this.groceries = response.data;
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
