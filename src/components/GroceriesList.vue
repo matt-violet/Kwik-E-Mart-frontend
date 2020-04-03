@@ -1,6 +1,6 @@
 <template>
   <div class="groceries-list-wrapper">
-    <h4>Grocery Items:</h4>
+    <h4 class="list-header">Grocery Items:</h4>
     <Grocery :grocery="grocery" class="grocery" v-for="grocery in groceries" v-bind:key="grocery.id"/>
   </div>
 </template>
@@ -39,5 +39,9 @@ export default {
   .groceries-list-wrapper {
     width: 100%;
     height: 100%;
+    text-align: left;
+  }
+  .list-header {
+    margin-left: 10px;
   }
 </style>

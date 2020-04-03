@@ -6,6 +6,7 @@
     <div class="details-div">
       <p class="name">{{ grocery.name }}</p>
       <p class="description">{{ grocery.description }}</p>
+      <p class="price">${{ grocery.price }}</p>
     </div>
   </div>
 </template>
@@ -29,10 +30,16 @@ export default {
     border-radius: 5px;
     margin: 10px;
     display: inline-block;
+    text-align: left;
+  }
+  .grocery-wrapper:hover {
+    opacity: .7;
+    cursor: pointer;
+    transition: .3s;
   }
   .grocery-img-div {
     overflow: hidden;
-    height: 200px;
+    height: 150px;
     width: 100%;
   }
   .grocery-img {
@@ -50,5 +57,10 @@ export default {
   .description {
     margin: 0;
     font-size: 12px;
+  }
+  .price {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>
