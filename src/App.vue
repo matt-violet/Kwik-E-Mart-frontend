@@ -6,16 +6,17 @@
     <router-view
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
-      :cart="cart"/>
-
+      :cart="cart"
+    />
     <!-- <div v-if="showModal" class="modal">
       <router-view :grocery="featuredGrocery"/>
     </div> -->
-
   </div>
 </template>
 
 <script>
+import GroceryDataService from "./services/GroceryDataService";
+import groceries from "../data";
 import Navbar from "./components/Navbar";
 export default {
   name: 'App',
@@ -30,10 +31,21 @@ export default {
       showModal: false,
     }
   },
+  mounted() {
+    GroceryDataService.deleteAll()
+      .then(response => {
+        console.log(response.data.message);
+      })
+    for (const grocery of groceries) {
+      GroceryDataService.create(grocery)
+        .then(response => {
+          console.log("Saved ", response.data.name)
+        })
+    }
+  },
   methods: {
     handleAddToCart(grocery) {
       let item = grocery;
-      console.log(item)
       this.$data.cart.push(item);
       this.$data.total += parseFloat(item.price);
     },
