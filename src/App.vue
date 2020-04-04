@@ -1,38 +1,51 @@
 <template>
   <div id="app">
+    <Navbar class="navbar" :cart="cart"/>
+    <h1 class="app-header">Kwik-E-Mart</h1>
     <img alt="store image" class="store-img" src="./assets/store.png">
-    <GroceriesList/>
+    <router-view
+      v-bind:addToCart="handleAddToCart"
+      v-bind:removeFromCart="handleRemoveFromCart"
+      :cart="cart"/>
+
+    <!-- <div v-if="showModal" class="modal">
+      <router-view :grocery="featuredGrocery"/>
+    </div> -->
+
   </div>
 </template>
 
 <script>
-import GroceryDataService from "./services/GroceryDataService";
-import GroceriesList from "./components/GroceriesList.vue"
-import groceries from "../data.js"
+import Navbar from "./components/Navbar";
 export default {
   name: 'App',
   components: {
-    GroceriesList
+    Navbar,
   },
-  methods: {
-    seedGroceryData() {
-      GroceryDataService.deleteAll()
-        .then(response => {
-          console.log(response.data.message)
-        })
-      for (const grocery of groceries) {
-        GroceryDataService.create(grocery)
-          .then(response => {
-            this.groceries = response.data;
-          })
-          .catch(e => {
-            console.log(e);
-          });
-      }
+  data() {
+    return {
+      cart: [],
+      total: 0,
+      featuredGrocery: {},
+      showModal: false,
     }
   },
-  mounted() {
-    this.seedGroceryData();
+  methods: {
+    handleAddToCart(grocery) {
+      let item = grocery;
+      console.log(item)
+      this.$data.cart.push(item);
+      this.$data.total += parseFloat(item.price);
+    },
+    handleRemoveFromCart(grocery) {
+      for (let i = this.$data.cart.length - 1; i >= 0; i--) {
+        if (this.$data.cart[i].name === grocery.name) {
+          this.$data.total -= parseFloat(grocery.price);
+          this.$data.cart.splice(i, 1);
+          return;
+        } 
+      }
+    }
   }
 }
 </script>
@@ -43,12 +56,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 0 50px;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.navbar {
+  margin-bottom: 50px;
 }
 .store-img {
-  width: 30%;
+  width: 300px;
   margin-bottom: 50px;
 }
 </style>
