@@ -1,5 +1,5 @@
 <template>
-  <div class="grocery-wrapper">
+  <div class="grocery-wrapper" data-aos="zoom-in">
     <div class="grocery-img-div">
       <img :src="grocery.image" class="grocery-img">
     </div>
@@ -54,21 +54,20 @@ export default {
 
 <style scoped>
   .grocery-wrapper {
-    width: 200px;
-    border: 1px solid;
+    width: 175px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px;
+    margin: 5px;
     display: inline-block;
     text-align: left;
   }
-  .grocery-wrapper:hover .details-div {
-    background: rgb(233, 233, 233);
+  .grocery-wrapper:hover {
+    box-shadow: 10px 10px 20px;
     transition: .3s;
   }
   .grocery-img-div {
     overflow: hidden;
-    height: 150px;
+    height: 125px;
     width: 100%;
   }
   .grocery-img {
@@ -76,36 +75,40 @@ export default {
     height: 100%;
   }
   .details-div {
-    padding: 10px;
+    padding: 5px 10px;
+    background: rgb(236, 236, 236);
+    color: rgb(70, 70, 70);
   }
   .name {
-    font-size: 20px;
-    font-weight: 700;
+    color: black;
+    font-size: 18px;
+    font-weight: 900;
     margin: 0;
   }
   .description {
     margin: 0;
+    font-weight: 500;
     font-size: 12px;
   }
   .price {
     margin: 0;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
   }
   .add-btn {
     margin: 5px 5px 0 0;
-    padding: 3px 8px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
+    border: .5px solid;
     border-radius: 50%;
-    background: lightgreen;
+    background: rgb(118, 230, 118);
   }
   .remove-btn {
+    border: .5px solid;
     margin: 5px 10px 0 0;
-    padding: 3px 8px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     border-radius: 50%;
-    background: rgb(255, 86, 86);
+    background: rgb(255, 147, 147);
   }
 </style>

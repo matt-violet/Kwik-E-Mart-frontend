@@ -1,6 +1,6 @@
 <template>
   <div class="groceries-list-wrapper">
-    <h4 class="list-header">Grocery Items:</h4>
+    <h2 class="list-header">Grocery Items:</h2>
     <Grocery
       v-for="grocery in groceries"
       v-bind:key="grocery.id"

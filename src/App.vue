@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar class="navbar" :cart="cart"/>
-    <h1 class="app-header">Kwik-E-Mart</h1>
-    <img alt="store image" class="store-img" src="./assets/store.png">
+    <h2 class="app-header" data-aos="fade-in">Kwik-e-Mart</h2>
+    <img alt="store image" data-aos="fade-up" class="store-img" src="./assets/store.png">
     <router-view
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
@@ -69,11 +69,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+.app-header {
+  padding: 10px 0;
+  border: 1px solid;
+  background: rgb(255, 137, 26);
+  font-weight: 900;
+}
 .navbar {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .store-img {
   width: 300px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 </style>
