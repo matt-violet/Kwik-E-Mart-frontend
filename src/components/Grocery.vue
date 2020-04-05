@@ -3,7 +3,7 @@
     <div class="grocery-img-div">
       <img :src="grocery.image" class="grocery-img">
     </div>
-    <div class="details-div">
+    <div :class="count > 0 ? 'details-div selected' : 'details-div'">
       <p class="name">{{ grocery.name }}</p>
       <p class="description">{{ grocery.description }}</p>
       <p v-if="count <= 0" class="price">${{ grocery.price }}</p>
@@ -94,6 +94,9 @@ export default {
     margin: 0;
     font-size: 12px;
     font-weight: 500;
+  }
+  .selected {
+    background: rgb(203, 255, 203);
   }
   .add-btn {
     margin: 5px 5px 0 0;

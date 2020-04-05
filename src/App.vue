@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <Navbar class="navbar" :cart="cart"/>
-    <h2 class="app-header" data-aos="fade-in">Kwik-e-Mart</h2>
+    <Navbar class="navbar" :cart="cartItems"/>
     <img alt="store image" data-aos="fade-up" class="store-img" src="./assets/store.png">
     <router-view
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
-      :cart="cart"
+      :cart="cartItems"
     />
     <!-- <div v-if="showModal" class="modal">
       <router-view :grocery="featuredGrocery"/>
@@ -25,7 +24,7 @@ export default {
   },
   data() {
     return {
-      cart: [],
+      cartItems: [],
       total: 0,
       featuredGrocery: {},
       showModal: false,
@@ -46,16 +45,37 @@ export default {
   methods: {
     handleAddToCart(grocery) {
       let item = grocery;
-      this.$data.cart.push(item);
+      item.qty++;
       this.$data.total += parseFloat(item.price);
+      GroceryDataService.update(grocery.id, item)
+        .then(response => {
+          let updatedGrocery = JSON.parse(response.config.data);
+          for (const cartItem of this.$data.cartItems) {
+            if (cartItem.name === updatedGrocery.name) {
+              return;
+            }
+          }
+          this.$data.cartItems.push(item);
+      })
+      .catch(e => {
+        console.log(e);
+      })
     },
     handleRemoveFromCart(grocery) {
-      for (let i = this.$data.cart.length - 1; i >= 0; i--) {
-        if (this.$data.cart[i].name === grocery.name) {
-          this.$data.total -= parseFloat(grocery.price);
-          this.$data.cart.splice(i, 1);
-          return;
-        } 
+      if (grocery.qty > 0) {
+        let item = grocery;
+        item.qty--;
+        this.$data.total -= parseFloat(item.price);
+        GroceryDataService.update(grocery.id, item)
+          .then(response => {
+            let updatedGrocery = JSON.parse(response.config.data);
+            if (updatedGrocery.qty === 0) {
+              this.$data.cartItems.splice(this.$data.cartItems.indexOf(updatedGrocery));
+            }
+          })
+          .catch(e => {
+            console.log(e);
+          })
       }
     }
   }
@@ -69,17 +89,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-.app-header {
-  padding: 10px 0;
-  border: 1px solid;
-  background: rgb(255, 137, 26);
-  font-weight: 900;
-}
 .navbar {
-  margin-bottom: 25px;
+  display: block;
 }
 .store-img {
+  display: block;
   width: 300px;
-  margin-bottom: 25px;
+  margin: 20px auto 40px auto;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: white;
 }
 </style>
