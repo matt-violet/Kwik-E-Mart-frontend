@@ -32,14 +32,8 @@ export default {
   },
   mounted() {
     GroceryDataService.deleteAll()
-      .then(response => {
-        console.log(response.data.message);
-      })
     for (const grocery of groceries) {
       GroceryDataService.create(grocery)
-        .then(response => {
-          console.log("Saved ", response.data.name)
-        })
     }
   },
   methods: {

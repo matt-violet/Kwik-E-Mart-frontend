@@ -3,13 +3,13 @@
     <h4 class="app-header" data-aos="fade-in">Kwik-e-Mart</h4>
     <div class="nav-options-div">
     <div class="home-div nav-option-div">
-      <a href="/home" class="home-text nav-text">Home</a>
+      <router-link to="/">Home</router-link>
     </div>
     <div class="shop-div nav-option-div">
-      <a href="/shop" class="shop-text nav-text">Shop</a>
+      <router-link to="shop">Shop</router-link>
     </div>
     <div class="cart-div nav-option-div">
-      <a href="/cart" class="cart-text nav-text">My Cart ({{ numCartItems }})</a>
+      <router-link to="cart">My Cart ({{ numCartItems }})</router-link>
     </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
   },
   watch: {
     cart: {
-      handler: function (cart) {
+      handler: function(cart) {
         let total = 0;
         for (const item of cart) {
           total += item.qty;
@@ -57,7 +57,6 @@ export default {
   }
   .nav-option-div {
     margin-left: 30px;
-    font-size: 14px;
     font-weight: 700;
     display: inline-block;
   }

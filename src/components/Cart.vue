@@ -8,9 +8,9 @@
         <td>Total</td>
       </tr>
       <tr v-for="(grocery, i) of groceries" v-bind:key="i" class="grocery-row">
-        <td>{{ findQtyOfItem(grocery) }}</td>
+        <td>{{ grocery.qty }}</td>
         <td>{{ grocery.name }}</td>
-        <td>$ {{ findTotalOfItem(grocery) }}</td>
+        <td>$ {{ (grocery.qty * grocery.price).toFixed(2) }}</td>
       </tr>
     </table>  
   </div>
@@ -31,25 +31,11 @@ export default {
   mounted() {
     GroceryDataService.getAll()
         .then(response => {
-          console.log(response)
-          this.groceries = response.data;
+          this.groceries = response.data.filter(item => item.qty > 0);
         })
         .catch(e => {
           console.log(e);
         });
-  },
-  methods: {
-    findQtyOfItem(grocery) {
-      const filteredItems = this.cart.filter(item => item.name === grocery.name);
-      const qty = filteredItems.length;
-      return qty;
-    },
-    findTotalOfItem(grocery) {
-      const filteredItems = this.cart.filter(item => item.name === grocery.name);
-      const qty = filteredItems.length;
-      const total = qty * parseFloat(grocery.price);
-      return total;
-    }
   }
 }
 </script>

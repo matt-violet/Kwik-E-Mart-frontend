@@ -3,21 +3,23 @@
     <div class="grocery-img-div">
       <img :src="grocery.image" class="grocery-img">
     </div>
-    <div :class="count > 0 ? 'details-div selected' : 'details-div'">
-      <p class="name">{{ grocery.name }}</p>
-      <p class="description">{{ grocery.description }}</p>
-      <p v-if="count <= 0" class="price">${{ grocery.price }}</p>
-      <p v-else class="price">${{ grocery.price }} x{{ count }}</p>
-      <button
-        class="add-btn"
-        v-on:click="handleAddedGrocery(grocery)"
-      >
+    <div :class="grocery.qty > 0 ? 'details-div selected' : 'details-div'">
+      <p class="name">
+        {{ grocery.name }}
+      </p>
+      <p class="description">
+        {{ grocery.description }}
+      </p>
+      <p v-if="grocery.qty <= 0" class="price">
+        ${{ grocery.price }}
+      </p>
+      <p v-else class="price">
+        ${{ grocery.price }} (x{{ grocery.qty }})
+      </p>
+      <button class="add-btn" v-on:click="handleAddedGrocery(grocery)">
         &#43;
       </button>
-      <button
-        class="remove-btn"
-        v-on:click="handleRemovedGrocery(grocery)"
-      >
+      <button class="remove-btn" v-on:click="handleRemovedGrocery(grocery)">
         &#8722;
       </button>
     </div>
@@ -33,20 +35,12 @@ export default {
     addToCart: {type: Function},
     removeFromCart: {type: Function},
   },
-  data() {
-    return {
-      count: 0
-    }
-  },
   methods: {
     handleAddedGrocery(grocery) {
       this.$emit('addToCart', grocery);
-      this.count++;
     },
     handleRemovedGrocery(grocery) {
-      console.log('asdf', grocery)
       this.$emit('removeFromCart', grocery);
-      this.count--;
     }
   }
 }
@@ -76,11 +70,10 @@ export default {
   }
   .details-div {
     padding: 5px 10px;
-    background: rgb(236, 236, 236);
+    background: rgb(233, 233, 233);
     color: rgb(70, 70, 70);
   }
   .name {
-    color: black;
     font-size: 18px;
     font-weight: 900;
     margin: 0;
@@ -96,12 +89,18 @@ export default {
     font-weight: 500;
   }
   .selected {
-    background: rgb(203, 255, 203);
+    background: rgb(87, 87, 87);
+    color: rgb(180, 180, 180);
+    transition: .3s;
+  }
+  .selected .name {
+    color: white;
+    transition: .3s;
   }
   .add-btn {
     margin: 5px 5px 0 0;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
     border: .5px solid;
     border-radius: 50%;
     background: rgb(118, 230, 118);
@@ -110,7 +109,7 @@ export default {
     border: .5px solid;
     margin: 5px 10px 0 0;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
     border-radius: 50%;
     background: rgb(255, 147, 147);
   }
