@@ -1,16 +1,16 @@
 <template>
   <div class="navbar-wrapper">
-    <h4 class="app-header" data-aos="fade-in">Kwik-e-Mart</h4>
+    <h4 class="app-header">Kwik-e-Mart</h4>
     <div class="nav-options-div">
-    <div class="home-div nav-option-div">
-      <router-link to="/">Home</router-link>
-    </div>
-    <div class="shop-div nav-option-div">
-      <router-link to="shop">Shop</router-link>
-    </div>
-    <div class="cart-div nav-option-div">
-      <router-link to="cart">My Cart ({{ numCartItems }})</router-link>
-    </div>
+      <div class="home-div nav-option-div">
+        <router-link to="/">Home</router-link>
+      </div>
+      <div class="shop-div nav-option-div">
+        <router-link to="shop">Shop</router-link>
+      </div>
+      <div class="cart-div nav-option-div">
+        <router-link to="cart">My Cart ({{ numCartItems }})</router-link>
+      </div>
     </div>
   </div>
 </template>

@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <Navbar class="navbar" :cart="cartItems"/>
-    <img alt="store image" data-aos="fade-up" class="store-img" src="./assets/store.png">
+    <img alt="store image" data-aos="fade-in" class="store-img" src="./assets/store.png">
     <router-view
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
       :cart="cartItems"
+      data-aos="zoom-in"
     />
     <!-- <div v-if="showModal" class="modal">
       <router-view :grocery="featuredGrocery"/>
@@ -95,6 +96,7 @@ a {
   color: black;
 }
 a:hover {
+  transition: .3s;
   color: white;
 }
 </style>

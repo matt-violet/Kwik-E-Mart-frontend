@@ -16,10 +16,10 @@
       <p v-else class="price">
         ${{ grocery.price }} (x{{ grocery.qty }})
       </p>
-      <button class="add-btn" v-on:click="handleAddedGrocery(grocery)">
+      <button class="add btn" v-on:click="handleAddedGrocery(grocery)">
         &#43;
       </button>
-      <button class="remove-btn" v-on:click="handleRemovedGrocery(grocery)">
+      <button class="remove btn" v-on:click="handleRemovedGrocery(grocery)">
         &#8722;
       </button>
     </div>
@@ -69,7 +69,7 @@ export default {
     height: 100%;
   }
   .details-div {
-    padding: 5px 10px;
+    padding: 5px 10px 8px 10px;
     background: rgb(233, 233, 233);
     color: rgb(70, 70, 70);
   }
@@ -97,20 +97,18 @@ export default {
     color: white;
     transition: .3s;
   }
-  .add-btn {
+  .btn {
     margin: 5px 5px 0 0;
+    padding: 0 5px;
     font-size: 12px;
     font-weight: 700;
-    border: .5px solid;
+    border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
+  }
+  .add {
     background: rgb(118, 230, 118);
   }
-  .remove-btn {
-    border: .5px solid;
-    margin: 5px 10px 0 0;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 50%;
-    background: rgb(255, 147, 147);
+  .remove {
+    background: rgb(255, 102, 102);
   }
 </style>
