@@ -43,29 +43,29 @@ export default {
 </script>
 
 <style scoped>
-  .navbar-wrapper {
-    width: 100%;
-    height: 50px;
-    padding: 10px 20px;
-    text-align: center;
-    vertical-align: middle;
-    color: black;
-    background: rgb(255, 137, 26);
-  }
-  .nav-options-div {
-    float: right;
-  }
-  .nav-option-div {
-    margin-left: 30px;
-    font-weight: 700;
-    display: inline-block;
-  }
-  .nav-text:hover {
-    cursor: pointer;
-  }
-  .app-header {
-    float: left;
-    font-weight: 900;
-    margin: 0;
-  }
+.navbar-wrapper {
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  background: rgb(255, 137, 26);
+}
+.nav-options-div {
+  float: right;
+}
+.nav-option-div {
+  margin-left: 30px;
+  font-weight: 700;
+  display: inline-block;
+}
+.nav-text:hover {
+  cursor: pointer;
+}
+.app-header {
+  float: left;
+  font-weight: 900;
+  margin: 0;
+}
 </style>

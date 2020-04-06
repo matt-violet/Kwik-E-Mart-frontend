@@ -5,7 +5,11 @@
     <router-view
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
+      v-bind:savePaymentInfo="handleSavePaymentMethod"
+      v-bind:getTotal="getTotal"
+      :paymentInfo="paymentInfo"
       :cart="cartItems"
+      :total="total"
       data-aos="zoom-in"
     />
     <!-- <div v-if="showModal" class="modal">
@@ -28,6 +32,7 @@ export default {
       cartItems: [],
       total: 0,
       featuredGrocery: {},
+      paymentInfo: {},
       showModal: false,
     }
   },
@@ -38,6 +43,13 @@ export default {
     }
   },
   methods: {
+    getTotal(cart) {
+      let total = 0;
+      for (const item of cart) {
+        total += (item.qty * parseFloat(item.price))
+      }
+      this.$data.total = total.toFixed(2);
+    },
     handleAddToCart(grocery) {
       let item = grocery;
       item.qty++;
@@ -72,6 +84,9 @@ export default {
             console.log(e);
           })
       }
+    },
+    handleSavePaymentMethod(tempPaymentInfo) {
+      this.$data.paymentInfo = Object.assign({}, tempPaymentInfo);
     }
   }
 }
@@ -98,5 +113,13 @@ a {
 a:hover {
   transition: .3s;
   color: white;
+}
+button {
+  margin: 0 20px;
+  border: 0px;
+  border-radius: 5px;
+  padding: 7px 15px;
+  font-size: 16px;
+  font-weight: 500;
 }
 </style>

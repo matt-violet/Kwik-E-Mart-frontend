@@ -14,14 +14,16 @@
       </tr>
       <tr class="bold-row">
         <td colspan="2">Total: </td>
-        <td>$ {{ getTotal(cart) }}</td>
+        <td>$ {{ total.toFixed(2) }}</td>
       </tr>  
     </table>
     <div class="payment-div">
       <router-link to="shop">
-        <button class="payment-btns edit">Edit Cart</button>
+        <button class="edit">Edit Cart</button>
       </router-link>
-      <button class="payment-btns checkout">Checkout</button>
+      <router-link to="addpayment">
+        <button class="checkout">Checkout</button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -30,59 +32,40 @@
 export default {
   name: "Cart",
   props: {
-    cart: {type: Array}
-  },
-  methods: {
-    getTotal(cart) {
-      let total = 0;
-      for (const item of cart) {
-        total += (item.qty * parseFloat(item.price))
-      }
-      return total;
-    }
+    cart: {type: Array},
+    total: {type: Number}
   }
 }
 </script>
 
 <style scoped>
-  .cart-header {
-    margin-bottom: 20px;
-  }
-  td {
-    padding: 5px;
-    border: 1px solid;
-  }
-  .totals-table {
-    margin: auto;
-    width: 400px;
-    text-align: left;
-    border-radius: 5px;
-  }
-  .bold-row {
-    font-weight: 700;
-    background: rgb(196, 196, 196);
-  }
-  .grocery-row {
-    background: rgb(240, 240, 240);
-  }
-  .payment-div {
-    margin-top: 50px;
-  }
-  .payment-btns {
-    margin: 0 20px;
-    border: 0px;
-    border-radius: 20px;
-    padding: 7px 15px;
-    font-size: 16px;
-  }
-  .payment-btns:hover {
-    transition: .3s;
-    transform: scale(1.1);
-  }
-  .edit {
-    background: lightskyblue;
-  }
-  .checkout {
-    background: rgb(91, 214, 91);
-  }
+.cart-header {
+  margin-bottom: 20px;
+}
+td {
+  padding: 5px;
+  border: 1px solid;
+}
+.totals-table {
+  margin: auto;
+  width: 400px;
+  text-align: left;
+  border-radius: 5px;
+}
+.bold-row {
+  font-weight: 700;
+  background: rgb(196, 196, 196);
+}
+.grocery-row {
+  background: rgb(240, 240, 240);
+}
+.payment-div {
+  margin-top: 50px;
+}
+.edit {
+  background: lightskyblue;
+}
+.checkout {
+  background: rgb(91, 214, 91);
+}
 </style>

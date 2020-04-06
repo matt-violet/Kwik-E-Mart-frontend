@@ -49,13 +49,13 @@ export default {
 </script>
 
 <style scoped>
-  .groceries-list-wrapper {
-    width: 100%;
-    height: 100%;
-    padding: 0 50px;
-    text-align: left;
-  }
-  .list-header {
-    margin-left: 10px;
-  }
+.groceries-list-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+  text-align: left;
+}
+.list-header {
+  margin-left: 10px;
+}
 </style>
