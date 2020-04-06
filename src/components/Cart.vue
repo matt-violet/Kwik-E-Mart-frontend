@@ -10,18 +10,21 @@
       <tr v-for="(grocery, i) of cart" v-bind:key="i" class="grocery-row">
         <td>{{ grocery.qty }} @ {{ grocery.price }}</td>
         <td>{{ grocery.name }}</td>
-        <td>$ {{ (grocery.qty * grocery.price).toFixed(2) }}</td>
+        <td>${{ (grocery.qty * grocery.price).toFixed(2) }}</td>
       </tr>
       <tr class="bold-row">
         <td colspan="2">Total: </td>
-        <td>$ {{ total.toFixed(2) }}</td>
+        <td>${{ total.toFixed(2) }}</td>
       </tr>  
     </table>
     <div class="payment-div">
       <router-link to="shop">
         <button class="edit">Edit Cart</button>
       </router-link>
-      <router-link to="addpayment">
+      <router-link v-if="Object.keys(paymentInfo).length" to="confirmpayment">
+        <button class="checkout">Checkout</button>
+      </router-link>
+      <router-link to="addpayment" v-else>
         <button class="checkout">Checkout</button>
       </router-link>
     </div>
@@ -33,7 +36,8 @@ export default {
   name: "Cart",
   props: {
     cart: {type: Array},
-    total: {type: Number}
+    total: {type: Number},
+    paymentInfo: {type: Object}
   }
 }
 </script>
