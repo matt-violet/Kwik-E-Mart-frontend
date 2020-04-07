@@ -76,19 +76,21 @@ label {
 }
 .add-payment-wrapper {
   width: 500px;
-  border: 1px solid lightgrey;
+  overflow: hidden;
+  border: 1px solid grey;
   border-radius: 5px;
   text-align: left;
 }
 .add-payment-header {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin: 0;
   background: lightgrey;
+  font-weight: 600;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 .add-payment-inner {
-  padding: 15px 20px;
+  padding: 20px;
 }
 .form-header {
   margin-right: 20px;

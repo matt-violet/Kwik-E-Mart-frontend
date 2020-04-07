@@ -90,24 +90,25 @@ p {
   margin: 40px
 }
 .confirm-div-header {
-  padding: 5px;
-  font-size: 16px;
+  padding: 15px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 700;
   text-align: center;
   background: lightgrey;
 }
 .order-summary-div {
-  width: 300px;
-  margin: 0 10px;
+  width: 275px;
+  margin: 0 15px;
   text-align: left;
   vertical-align: top;
-  border: 1px solid lightgrey;
+  border: 1px solid grey;
   border-radius: 5px;
   overflow: hidden;
   display: inline-block;
 }
 .order-summary-inner-div {
-  padding: 5px;
+  padding: 15px;
 }
 .payment-header, .summary-header {
   font-weight: 900;

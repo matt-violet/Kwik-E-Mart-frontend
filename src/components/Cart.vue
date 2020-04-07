@@ -49,8 +49,7 @@ export default {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 td {
-  padding: 5px;
-  border: 1px solid;
+  padding: 8px;
 }
 .totals-table {
   margin: auto;
@@ -59,12 +58,14 @@ td {
   border-radius: 5px;
 }
 .bold-row {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 18px;
   background: rgb(31, 31, 31);
-  color: lightgrey;
+  color: white;
 }
 .grocery-row {
   font-weight: 500;
+  font-size: 14px;
   background: rgb(240, 240, 240);
 }
 .payment-div {
