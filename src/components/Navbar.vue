@@ -1,10 +1,9 @@
 <template>
   <div class="navbar-wrapper">
-    <h4 class="app-header">Kwik-e-Mart</h4>
+    <router-link to="/">
+      <h4 class="app-header">⚡ Kwik-e-Mart ⚡</h4>
+    </router-link>
     <div class="nav-options-div">
-      <div class="home-div nav-option-div">
-        <router-link to="/">Home</router-link>
-      </div>
       <div class="shop-div nav-option-div">
         <router-link to="shop">Shop</router-link>
       </div>
@@ -45,19 +44,18 @@ export default {
 <style scoped>
 .navbar-wrapper {
   width: 100%;
-  height: 50px;
-  padding: 10px 20px;
+  height: 55px;
+  padding: 15px 40px;
   text-align: center;
   vertical-align: middle;
-  color: black;
-  background: rgb(255, 137, 26);
+  background: rgb(31, 31, 31);
 }
 .nav-options-div {
   float: right;
 }
 .nav-option-div {
-  margin-left: 30px;
-  font-weight: 700;
+  margin-left: 40px;
+  font-weight: 600;
   display: inline-block;
 }
 .nav-text:hover {
@@ -65,7 +63,8 @@ export default {
 }
 .app-header {
   float: left;
-  font-weight: 900;
+  font-size: 22px;
+  font-weight: 700;
   margin: 0;
 }
 </style>

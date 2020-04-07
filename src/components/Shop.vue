@@ -1,6 +1,6 @@
 <template>
-  <div class="groceries-list-wrapper">
-    <h2 class="list-header">Grocery Items:</h2>
+  <div class="shop-wrapper">
+    <h2 class="shop-header">Shop:</h2>
     <Grocery
       v-for="grocery in groceries"
       v-bind:key="grocery.id"
@@ -17,7 +17,7 @@
 import GroceryDataService from "../services/GroceryDataService";
 import Grocery from "./Grocery";
 export default {
-  name: 'GroceriesList',
+  name: 'Shop',
   components: {
     Grocery,
   },
@@ -49,13 +49,15 @@ export default {
 </script>
 
 <style scoped>
-.groceries-list-wrapper {
+.shop-wrapper {
   width: 100%;
   height: 100%;
   padding: 0 50px;
   text-align: left;
 }
-.list-header {
+.shop-header {
   margin-left: 10px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
 }
 </style>

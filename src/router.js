@@ -9,11 +9,12 @@ export default new Router({
     {
       path: "/",
       name: "home",
+      component: () => import("./components/Home")
     },
     {
       path: "/shop",
       name: "shop",
-      component: () => import("./components/GroceriesList")
+      component: () => import("./components/Shop")
     },
     {
       path: "/groceries/:id",

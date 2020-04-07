@@ -3,6 +3,7 @@
     <Navbar class="navbar" :cart="cartItems"/>
     <img alt="store image" data-aos="fade-in" class="store-img" src="./assets/store.png">
     <router-view
+      class="router"
       v-bind:addToCart="handleAddToCart"
       v-bind:removeFromCart="handleRemoveFromCart"
       v-bind:savePaymentInfo="handleSavePaymentMethod"
@@ -94,7 +95,8 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -104,15 +106,19 @@ export default {
 }
 .store-img {
   display: block;
-  width: 300px;
-  margin: 20px auto 40px auto;
+  width: 200px;
+  margin: 20px auto;
+}
+.router {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 a {
-  color: black;
+  color: rgb(196, 196, 196);
 }
 a:hover {
   transition: .3s;
   color: white;
+  text-decoration: none;
 }
 button {
   margin: 0 20px;
