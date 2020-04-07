@@ -35,6 +35,11 @@ export default new Router({
       path: "/confirmpayment",
       name: "confirmpayment",
       component: () => import("./components/ConfirmPayment")
+    },
+    {
+      path: "/thankyou",
+      name: "thankyou",
+      component: () => import("./components/ThankYou")
     }
   ]
 });

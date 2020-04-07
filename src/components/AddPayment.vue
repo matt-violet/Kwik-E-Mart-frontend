@@ -36,7 +36,7 @@
         </div>
         <router-link to="confirmpayment">
           <button type="submit" class="save-payment-btn" v-on:click="savePaymentInfo(tempPaymentInfo)">
-            Save Payment Method
+            Save
           </button>
         </router-link>
       </form>
@@ -76,7 +76,6 @@ label {
 }
 .add-payment-wrapper {
   width: 500px;
-  margin: 0 auto;
   border: 1px solid lightgrey;
   border-radius: 5px;
   text-align: left;
@@ -86,6 +85,7 @@ label {
   padding: 10px;
   margin: 0;
   background: lightgrey;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .add-payment-inner {
   padding: 15px 20px;
@@ -111,6 +111,6 @@ label {
 .save-payment-btn {
   width: 100%;
   margin: 20px auto 0 auto;
-  background: rgb(91, 214, 91);
+  background: green;
 }
 </style>

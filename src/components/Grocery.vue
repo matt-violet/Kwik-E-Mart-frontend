@@ -89,7 +89,7 @@ export default {
   font-weight: 500;
 }
 .selected {
-  background: rgb(87, 87, 87);
+  background: rgb(31, 31, 31);
   color: rgb(180, 180, 180);
   transition: .3s;
 }

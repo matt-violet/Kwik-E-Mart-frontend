@@ -44,7 +44,9 @@ export default {
 
 <style scoped>
 .cart-header {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 td {
   padding: 5px;
@@ -58,18 +60,20 @@ td {
 }
 .bold-row {
   font-weight: 700;
-  background: rgb(196, 196, 196);
+  background: rgb(31, 31, 31);
+  color: lightgrey;
 }
 .grocery-row {
+  font-weight: 500;
   background: rgb(240, 240, 240);
 }
 .payment-div {
   margin-top: 50px;
 }
 .edit {
-  background: lightskyblue;
+  background: rgb(0, 157, 255);
 }
 .checkout {
-  background: rgb(91, 214, 91);
+  background: green;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="confirm-payment-wrapper">
-    <h4 class="confirm-header">Confirm and Pay</h4>
+    <h4 class="confirm-header">Confirm & Pay</h4>
     <div class="order-summary-div">
       <h4 class="confirm-div-header">Payment Method:</h4>
       <div class="order-summary-inner-div">
@@ -31,9 +31,11 @@
       </div>
     </div>
     <h4 class="confirm-header final-total">Total: ${{ (total + (total * .0856)).toFixed(2) }}</h4>
+      <router-link to="/thankyou">  
     <button class="confirm-btn">
       Confirm Payment
     </button>
+      </router-link>
   </div>
 </template>
 
@@ -80,7 +82,8 @@ p {
 }
 .confirm-header {
   margin-bottom: 40px;
-  font-weight: 700;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
 }
 .final-total {
   font-size: 20px;
@@ -111,6 +114,6 @@ p {
   font-size: 12px;
 }
 .confirm-btn {
-  background: rgb(91, 214, 91);
+  background: green;
 }
 </style>

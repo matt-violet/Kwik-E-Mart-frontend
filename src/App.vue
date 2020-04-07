@@ -100,6 +100,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  min-width: 565px;
 }
 .navbar {
   display: block;
@@ -107,9 +108,10 @@ export default {
 .store-img {
   display: block;
   width: 200px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
 }
 .router {
+  margin: 50px auto 0 auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 a {
@@ -121,11 +123,17 @@ a:hover {
   text-decoration: none;
 }
 button {
+  font-family: 'Montserrat Alternates', sans-serif;
   margin: 0 20px;
-  border: 0px;
   border-radius: 5px;
-  padding: 7px 15px;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  border: 0px;
+}
+button:hover {
+  opacity: .9;
+  transition: .3s
 }
 </style>

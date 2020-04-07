@@ -1,6 +1,5 @@
 <template>
   <div class="shop-wrapper">
-    <h2 class="shop-header">Shop:</h2>
     <Grocery
       v-for="grocery in groceries"
       v-bind:key="grocery.id"
@@ -54,10 +53,5 @@ export default {
   height: 100%;
   padding: 0 50px;
   text-align: left;
-}
-.shop-header {
-  margin-left: 10px;
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-weight: 700;
 }
 </style>
