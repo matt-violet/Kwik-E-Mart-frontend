@@ -4,7 +4,7 @@ const groceries = [
     description: "1 bag of fresh lettuce",
     image: "https://images.unsplash.com/photo-1543056295-d585ba290712?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
     type: "produce",
-    price: 1.00,
+    price: 1.99,
     qty: 0,    
   },
   {
@@ -12,7 +12,7 @@ const groceries = [
     description: "1 bag of cheese puff snacks",
     image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
     type: "snack",
-    price: 2.50,
+    price: 1.99,
     qty: 0,    
   },
   {
@@ -124,7 +124,7 @@ const groceries = [
     description: "1 lb of swiss cheese",
     image: "https://cdn.pixabay.com/photo/2017/01/11/19/56/cheese-1972744_1280.jpg",
     type: "other",
-    price: 3.5,
+    price: 7.99,
     qty: 0,
   },
   {

@@ -69,12 +69,12 @@ td {
   background: rgb(240, 240, 240);
 }
 .payment-div {
-  margin-top: 50px;
+  margin: 50px auto;
 }
 .edit {
   background: rgb(0, 157, 255);
 }
 .checkout {
-  background: green;
+  background: rgb(0, 200, 0);
 }
 </style>

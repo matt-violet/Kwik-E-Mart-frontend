@@ -31,11 +31,11 @@
       </div>
     </div>
     <h4 class="confirm-header final-total">Total: ${{ (total + (total * .0856)).toFixed(2) }}</h4>
-      <router-link to="/thankyou">  
-    <button class="confirm-btn">
-      Confirm Payment
-    </button>
-      </router-link>
+    <router-link to="/thankyou">  
+      <button class="confirm-btn">
+        Confirm Payment
+      </button>
+    </router-link>
   </div>
 </template>
 
@@ -96,6 +96,7 @@ p {
   font-weight: 700;
   text-align: center;
   background: lightgrey;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .order-summary-div {
   width: 275px;
@@ -115,6 +116,6 @@ p {
   font-size: 12px;
 }
 .confirm-btn {
-  background: green;
+  background: rgb(0, 200, 0);
 }
 </style>

@@ -32,9 +32,7 @@ export default {
     return {
       cartItems: [],
       total: 0,
-      featuredGrocery: {},
       paymentInfo: {},
-      showModal: false,
     }
   },
   mounted() {
@@ -101,6 +99,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   min-width: 565px;
+  margin-bottom: 50px;
 }
 .navbar {
   display: block;

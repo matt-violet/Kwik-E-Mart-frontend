@@ -13,6 +13,9 @@ export default {
 </script>
 
 <style scoped>
+.thankyou-wrapper {
+  margin-bottom: 50px;
+}
 .thankyou-header {
   font-size: 38px;
   margin-top: 50px;
@@ -24,6 +27,5 @@ export default {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 60px;
   font-weight: 700;
-  
 }
 </style>

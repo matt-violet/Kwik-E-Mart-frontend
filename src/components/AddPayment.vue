@@ -113,6 +113,6 @@ label {
 .save-payment-btn {
   width: 100%;
   margin: 20px auto 0 auto;
-  background: green;
+  background: rgb(0, 200, 0);
 }
 </style>
