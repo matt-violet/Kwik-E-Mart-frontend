@@ -9,7 +9,7 @@ For the Kwik-e-Mart back end repository, [click here](https://github.com/matt-vi
 
 Click the image below or visit my [portfolio website](https://matt-violet.github.io/) for a video demo.
 
-[![Kwik-e-Mart](https://user-images.githubusercontent.com/46619903/78856064-8803c000-79da-11ea-89af-869aaf91a085.png)](https://matt-violet.github.io/portfolio/)
+[![Kwik-e-Mart](https://user-images.githubusercontent.com/46619903/78856064-8803c000-79da-11ea-89af-869aaf91a085.png)](https://matt-violet.github.io/)
 
 
 ## Project setup
